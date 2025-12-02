@@ -31,7 +31,7 @@ try:
     
     # Validação simples dos requisitos (10 alunos, 4 tecnologias)
     if df_raw['from'].nunique() < 10 or df_raw['to'].nunique() < 4:
-        print("⚠️ AVISO: O dataset parece menor que o exigido (Min: 10 alunos, 4 techs).")
+        print("AVISO: O dataset parece menor que o exigido (Min: 10 alunos, 4 techs).")
 
     # Transforma a lista de dados em uma Matriz de Incidência (Pivot Table)
     # Linhas = Alunos, Colunas = Tecnologias, Valores = Peso (1 ou 0)
@@ -50,18 +50,24 @@ print("Calculando matrizes...")
 # A - Matriz de Incidência (Alunos x Tecnologias)
 # Representa a relação direta de quem escolheu o quê.
 matriz_incidencia = df
+print("\n--- MATRIZ DE INCIDÊNCIA ---")
+print(matriz_incidencia)
 
 # B - Matriz de Similaridade (Alunos x Alunos)
 # Multiplicação da matriz pela sua transposta (A * A^T).
 # O resultado mostra quantos itens em comum dois alunos têm.
 matriz_similaridade = df.dot(df.T)
 np.fill_diagonal(matriz_similaridade.values, 0) # Remove a relação do aluno com ele mesmo
+print("\n--- MATRIZ DE SIMILARIDADE (Alunos) ---")
+print(matriz_similaridade)
 
 # C - Matriz de Coocorrência (Tecnologias x Tecnologias)
 # Multiplicação da transposta pela matriz original (A^T * A).
 # O resultado mostra quantas vezes duas tecnologias foram escolhidas juntas.
 matriz_coocorrencia = df.T.dot(df)
 np.fill_diagonal(matriz_coocorrencia.values, 0) # Remove a relação da tech com ela mesma
+print("\n--- MATRIZ DE COOCORRÊNCIA (Tecnologias) ---")
+print(matriz_coocorrencia)
 
 
 # FUNÇÃO DE PLOTAGEM E ANÁLISE.

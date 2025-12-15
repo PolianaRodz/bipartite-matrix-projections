@@ -1,4 +1,4 @@
-Este repositório documenta o projeto prático desenvolvido para a disciplina de **Matemática Discreta**. O objetivo central é demonstrar a aplicação de conceitos de **Teoria dos Grafos** e **Álgebra Linear** na análise de dados reais, focando especificamente na modelagem de redes bipartidas e sua projeção através de operações matriciais.
+O objetivo central é demonstrar a aplicação de conceitos de **Teoria dos Grafos** e **Álgebra Linear** na análise de dados reais, focando especificamente na modelagem de redes bipartidas e sua projeção através de operações matriciais.
 
 ---
 
@@ -36,4 +36,3 @@ As projeções são obtidas pelas seguintes operações de Álgebra Linear:
 4.  Os grafos gerados e as métricas serão salvos na pasta `/resultados`.
 
 ---
-*Desenvolvido para fins educacionais.*
